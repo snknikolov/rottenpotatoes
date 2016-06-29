@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+movies = [
+    {:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
+    {:title => 'When Harry Met Sally', :rating => 'R', :release_date => '21-Jul-1989' },
+    {:title => 'The Help', :rating => 'PG-13', :release_date => '12-Jun-1981' },
+    {:title => 'Fight Club', :rating => 'R', :release_date => '21-Dec-1999' }
+]
+
+movies.each do |m|
+    Movie.create!(m)
+end
