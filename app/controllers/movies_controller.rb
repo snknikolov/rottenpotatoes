@@ -1,17 +1,10 @@
 class MoviesController < ApplicationController
   def index
-    #@movies = Movie.all 
-    #byebug
     if params[:sort] == nil
       @movies = Movie.order(:title)
-    #elsif params[:release_date] != nil
-      #@movies = Movie.order(:release_date)
     else
-      #@movies = Movie.all
       @movies = Movie.order(params[:sort])
     end
-    #@movies = Movie.order(params)
-    #@movies = Movie.order(params)
   end
   
   def show
