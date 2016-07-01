@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
     end
     @selected = params[:ratings] == nil ? @all_ratings : params[:ratings].keys
 
-    if params[:sort] == nil
+    if params[:sort] == 'default'
       @movies = Movie.where({rating: @selected})
     else
       @movies = Movie.order(params[:sort]).where({rating: @selected})
